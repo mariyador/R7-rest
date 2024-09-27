@@ -58,6 +58,9 @@ gem 'rspec-rails'
 gem 'rexml'
 gem 'rswag'
 
+gem 'rack-cors'
+gem 'rack-session'
+
 group :test do
   gem 'factory_bot_rails'
   gem 'faker'

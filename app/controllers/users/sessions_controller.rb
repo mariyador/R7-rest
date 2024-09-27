@@ -12,7 +12,7 @@ class Users::SessionsController < Devise::SessionsController
     def respond_with(resource, _opts = {})
       if resource.present? && resource.id.present?
         # Set the CSRF token in the cookies and response header
-        cookies["CSRF-TOKEN"] = form_authenticity_token
+        cookies["CSRF-TOKEN"] = { value: form_authenticity_token, secure: true, same_site: :None, partitioned: true }
         response.set_header('X-CSRF-Token', form_authenticity_token)
         render json: { message: 'You are logged in.' }, status: :created
       else

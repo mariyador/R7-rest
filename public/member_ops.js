@@ -162,7 +162,6 @@ function handle_members(event) {
         method: "DELETE",
         headers: headers,
       }).then((response) => {
-        console.log(response);  // Логируем весь ответ сервера
         if (response.status === 200) {
           response.json().then((data) => {
             resultsDiv.innerHTML = "";
