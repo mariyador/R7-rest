@@ -43,10 +43,13 @@ class Api::V1::MembersController < ApplicationController
   
     # DELETE /members/:id
     def destroy
-      if check_access
-        @member.destroy
-        render json: { message: 'Member record successfully deleted.'}, status: 200
-      end
+        if check_access
+            if @member.destroy
+                render json: { message: 'Member record successfully deleted.' }, status: :ok
+            else
+                render json: { error: 'Failed to delete member.' }, status: :unprocessable_entity
+            end
+        end
     end
   
     private
