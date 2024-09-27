@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.2.1"
+ruby '3.2.1'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4", ">= 7.0.4.2"
@@ -46,3 +46,23 @@ group :development do
   # gem "spring"
 end
 
+
+gem "devise", "~> 4.9"
+
+gem "email_validator", "~> 2.2"
+
+gem "strong_password", "~> 0.0.10"
+
+
+gem 'rspec-rails'
+gem 'rexml'
+gem 'rswag'
+
+gem 'rack-cors'
+gem 'rack-session'
+
+group :test do
+  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'rails-controller-testing'
+end
